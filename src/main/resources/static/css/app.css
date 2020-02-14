@@ -1,0 +1,215 @@
+#filter{
+	width:200px;
+}
+
+.row .form-group .input-group-addon {
+  background-color: #0080ff;
+  border-right: 1px solid #ccc;
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 0;
+  border-bottom: 0;
+}
+.locationbuttonSize{
+	width=20px;
+}
+
+.page-content, .page-content-wrapper {
+	min-height:676 !important;
+}
+/*
+
+.floatRight{
+	float:right;
+	margin-right: 18px;
+}
+
+.has-error{
+	color:red;
+}
+
+.formcontainer{
+	background-color: #74B2B2;
+	padding: 20px;
+}
+
+.tablecontainer{
+	padding-left: 20px;
+}
+
+.generic-container {
+  width:96%;
+  margin-left: 7px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #EAE7E7;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 0 30px black;
+}
+
+.custom-width {
+    width: 80px !important;
+}
+
+      .username.ng-valid {
+          background-color: lightgreen;
+      }
+      .username.ng-dirty.ng-invalid-required {
+          background-color: red;
+      }
+      .username.ng-dirty.ng-invalid-minlength {
+          background-color: yellow;
+      }
+  .firstName.ng-valid {
+          background-color: lightgreen;
+      }
+      .firstName.ng-dirty.ng-invalid-required {
+          background-color: red;
+      }
+      .rirstName.ng-dirty.ng-invalid-minlength {
+          background-color: yellow;
+      }
+        .lastName.ng-valid {
+          background-color: lightgreen;
+      }
+      .lastName.ng-dirty.ng-invalid-required {
+          background-color: red;
+      }
+      .lastname.ng-dirty.ng-invalid-minlength {
+          background-color: yellow;
+      }
+      .email.ng-valid {
+          background-color: lightgreen;
+      }
+      .email.ng-dirty.ng-invalid-required {
+          background-color: red;
+      }
+      .email.ng-dirty.ng-invalid-email {
+          background-color: yellow;
+      }
+      
+       .phone.ng-valid {
+          background-color: lightgreen;
+      }
+      .phone.ng-dirty.ng-invalid-required {
+          background-color: red;
+      }
+      .phone.ng-dirty.ng-invalid-email {
+          background-color: yellow;
+      }
+      html{
+	background-color:#2F2F2F;
+}
+
+body{
+	height: 100%;
+	background-color:rgb(245, 245, 245);
+}
+
+
+#header {
+    margin-left:14%%;
+    top: 0px;
+    width: 100%;
+	height: 10%;
+	position: inherit;
+	font-family: 'bgMed',arial,helvetica,sans-serif;
+    font-size: 32px!important;
+    color: #ff0000;
+    z-index: 15;
+    background-color: #3C6976;
+   border-bottom: 2px solid #00ffff;
+    padding-top:1px;
+    text-align:left;
+}
+#header .language_content{
+	 text-align:right !important;
+	 color:white !important;
+	 	 
+	}
+#header	.header_title h3{
+	margin-top :0px !important;
+	
+}
+#footer {
+	margin-left:14%;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+	height: 10%;
+	position: fixed;
+	font-family: 'bgMed',arial,helvetica,sans-serif;
+    font-size: 0.6em;
+    color: #fff;
+    z-index: 15;
+    text-transform: uppercase;
+    background-color: #272727;
+	padding-top:20px;   
+    text-align:center;
+}
+
+
+#sidemenu {
+    width: 14%;
+    background-color:#3C6976;
+    height: 100%;
+    overflow: auto;
+    float: left;
+    z-index: 20;
+    position: fixed;
+    left: 0px;
+    margin-top:
+}
+
+#sidemenu #menu {
+    color: #fff;
+    text-align: right;
+    list-style-type: none;
+    margin-right: 40px;
+    float: right;
+}
+
+#sidemenu #menu li {
+    width: 150px;
+    height: 35px;
+    font-size: 1.2em;
+    padding-right:5px;
+}
+
+#sidemenu #menu li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+#sidemenu #menu li:active{
+	border-left: 5px solid hsl(180,70%,55%);
+}
+
+#sidemenu #menu li:hover {
+    background-color: #635555;
+    border-left: 5px solid hsl(180,70%,55%);
+}
+
+.logo{
+	float:left;
+}
+div h1 {
+	margin-top: -5px;
+}
+
+site-content {
+    width: 85%;
+    height: 100%;
+    overflow: auto;
+    float: left;
+    z-index: 20;
+    position: fixed;
+    min-height: 600px;
+    margin-top:0%;
+    margin-bottom:20%;
+    margin-left:15%;
+    padding-left:10px;
+}
+*/

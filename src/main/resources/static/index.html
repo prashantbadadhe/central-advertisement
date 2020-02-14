@@ -1,0 +1,226 @@
+<!doctype html>
+<html ng-app="myapp">
+<head>
+<base href="/">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Radixile|Bank Advertisement</title>
+<link rel="icon" type="image/gif/png" href="img/images.png" />
+<link href="styles/styles.css" rel="stylesheet" />
+<link href="styles/bootstrap.min.css" rel="stylesheet" />
+<link href="scripts/node_modules/angular-ui-grid/ui-grid.min.css"
+	rel="stylesheet" />
+<link
+	href="metronic/global/plugins/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css" />
+<link
+	href="metronic/global/plugins/simple-line-icons/simple-line-icons.min.css"
+	rel="stylesheet" type="text/css" />
+<link href="metronic/global/plugins/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet" type="text/css" />
+<link href="metronic/global/plugins/uniform/css/uniform.default.css"
+	rel="stylesheet" type="text/css" />
+<link
+	href="metronic/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css"
+	rel="stylesheet" type="text/css" />
+<link href="metronic/global/css/components.css" rel="stylesheet"
+	type="text/css" />
+<link href="metronic/global/css/plugins.css" rel="stylesheet"
+	type="text/css" />
+<link href="metronic/admin/layout/css/layout.css" rel="stylesheet"
+	type="text/css" />
+<link href="metronic/admin/layout/css/themes/default.css"
+	rel="stylesheet" type="text/css" id="style_color" />
+<link href="metronic/admin/layout/css/custom.css" rel="stylesheet"
+	type="text/css" />
+<link
+	href="metronic/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"
+	rel="stylesheet" type="text/css" />
+<link
+	href="scripts/bower_components/angularjs-datepicker/dist/angular-datepicker.css"
+	rel="stylesheet" />
+
+</head>
+<body class="page-header-fixed page-quick-sidebar-over-content"
+	ng-controller="IndexController as ctrl" ng-cloak>
+	<div class="page-header navbar navbar-fixed-top"
+		ng-show="authenticated">
+		<div class="page-header-inner">
+			<div class="page-logo">
+				<a href="#!dashboard"> <img src="img/black_croped.png"
+					alt="logo" />
+				</a>
+				<div class="menu-toggler sidebar-toggler hide"></div>
+			</div>
+			<a href="javascript:;" class="menu-toggler responsive-toggler"
+				data-toggle="collapse" data-target=".navbar-collapse"> </a>
+			<div class="top-menu">
+				<!--  <ul class="nav navbar-nav navbar-left-menu">
+			   <li><a class="more" ng-href="#!branch">Branch</a></li>
+			</ul>  -->
+				<ul class="nav navbar-nav navbar-left-menu">
+					<li class="dropdown"><a class="dropdown-toggle operation-menu"
+						data-toggle="dropdown" data-hover="dropdown"
+						data-close-others="true"> <span> Operations </span> <i
+							class="fa fa-angle-down"></i>
+					</a>
+						<ul class="dropdown-menu">
+							<li class="{{menu.liclass}}" ng-repeat="menu in menuObject"
+								ng-show="{{menu.ngshow}}"
+								ng-if="userDetails.roleName==menu.role || userDetails.roleName==menu.role1"><a
+								ng-href="{{menu.nghref}}"> <i class="{{menu.iclass}}"></i> <span
+									class="{{menu.spanclass}}">{{menu.screenName}}</span> <span
+									class="{{menu.selectclass}}"></span>
+							</a></li>
+
+						</ul></li>
+					<li class="{{menu.liclass}}" ng-repeat="menu in topMenuAdmin"
+						ng-show="{{menu.ngshow}}"
+						ng-if="userDetails.roleName==menu.role"><a class="top-menu-admin"
+						ng-href="{{menu.nghref}}"> <i class="{{menu.iclass}}"></i> <span
+							class="{{menu.spanclass}}">{{menu.screenName}}</span> <span
+							class="{{menu.selectclass}}"></span>
+					</a></li>
+				</ul>
+				<ul class="nav navbar-nav pull-right">
+					<li><a ng-href="#!aboutUs">About Us</a></li>
+					<li><a><i class="icon-user"></i>&nbsp;
+							{{userDetails.userName | uppercase}}</a></li>
+					<li><a ng-click="logout()"> <i class="icon-key"></i> Log
+							Out
+					</a></li>
+ 
+				</ul>
+			</div>
+			<!-- END TOP NAVIGATION MENU -->
+		</div>
+		<!-- END HEADER INNER -->
+	</div>
+	<!-- END HEADER -->
+	<div class="clearfix"></div>
+	<div class="page-container">
+		<!-- BEGIN SIDEBAR -->
+		<div class="page-sidebar-wrapper" ng-show="authenticated">
+			<div class="page-sidebar navbar-collapse collapse">
+				<!-- Left Menu's For Admin -->
+				<ul class="page-sidebar-menu" data-auto-scroll="true"
+					data-slide-speed="200">
+					<li class="sidebar-toggler-wrapper">
+						<div class="sidebar-toggler"></div>
+					</li>
+					<li class="{{menu.liclass}}" ng-repeat="menu in menuObject"
+						ng-show="{{menu.ngshow}}"
+						ng-if="userDetails.roleName==menu.role || userDetails.roleName==menu.role1"><a
+						ng-href="{{menu.nghref}}"> <i class="{{menu.iclass}}"></i> <span
+							class="{{menu.spanclass}}">{{menu.screenName}}</span> <span
+							class="{{menu.selectclass}}"></span>
+					</a></li>
+				</ul>
+				<div ng-bind-html="renderHtml()"></div>
+			</div>
+		</div>
+		<div class="page-content-wrapper ">
+			<div ng-view class="page-content"></div>
+		</div>
+	</div>
+	<!--  </div> -->
+	<!--Imports-->
+	<div class="page-footer">
+		<div class="page-footer-inner">2017-2018 &copy; Radixile
+			Technology Solutions.</div>
+		<div class="page-footer-tools">
+			<span class="go-top"> <i class="fa fa-angle-up"></i>
+			</span>
+		</div>
+	</div>
+
+	<script src="scripts/build/angular-packages.min.js"
+		type="application/javascript"></script>
+	<script src="scripts/build/metronics.min.js"
+		type="application/javascript"></script>
+	<script src="scripts/app.js" type="text/javascript"></script>
+	<script src="scripts/routes.js" type="application/javascript"></script>
+	<script src="scripts/common.js" type="text/javascript"></script>
+	<script src="scripts/util/login.js" type="text/javascript"></script>
+
+	<!--  <script src="scripts/build/allControllers.min.js" type="application/javascript"></script>
+	<script src="scripts/build/allServices.min.js" type="application/javascript"></script>
+	<script src="scripts/build/allCustomDirectives.min.js" type="application/javascript"></script> -->
+	
+	<script src="scripts/services/loginService.js"
+		type="application/javascript"></script>
+	<script src="scripts/services/dashboardService.js"
+		type="application/javascript"></script>
+	<script src="scripts/controllers/homeController.js"
+		type="application/javascript"></script>
+	<script src="scripts/controllers/loginController.js"
+		type="application/javascript"></script>
+	<script src="scripts/controllers/registerController.js"
+		type="application/javascript"></script>
+	<script src="scripts/controllers/landingController.js"
+		type="application/javascript"></script>
+	<script src="scripts/controllers/indexController.js"
+		type="application/javascript"></script>
+	<script src="scripts/services/indexService.js"
+		type="application/javascript"></script>
+	<script src="scripts/controllers/dashboardController.js"
+		type="application/javascript"></script>
+	<script src="scripts/controllers/role/roleController.js"
+		type="application/javascript"></script>
+	<script src="scripts/controllers/company/companyController.js"
+		type="application/javascript"></script>
+	<script src="scripts/controllers/company/editController.js"
+		type="application/javascript"></script>
+	<script src="scripts/controllers/company/createController.js"
+		type="application/javascript"></script>
+	<script src="scripts/services/companyService.js"
+		type="application/javascript"></script>
+	<script src="scripts/controllers/branch/mainController.js"
+		type="application/javascript"></script>
+	<script src="scripts/controllers/branch/editController.js"
+		type="application/javascript"></script>
+	<script src="scripts/controllers/branch/createController.js"
+		type="application/javascript"></script>
+	<script src="scripts/services/branchService.js"
+		type="application/javascript"></script>
+	<script src="scripts/customDirectives/alertDirectives.js"
+		type="application/javascript"></script>
+	<script src="scripts/customDirectives/utilityDirectives.js"
+		type="application/javascript"></script>
+	<script src="scripts/controllers/UploadFileController.js"
+		type="application/javascript"></script>
+	<script src="scripts/services/uploadFileService.js"
+		type="application/javascript"></script>
+	<script src="scripts/customDirectives/fileUploadModel.js"
+		type="application/javascript"></script>
+	<script src="scripts/controllers/BranchCodeController.js"
+		type="application/javascript"></script>
+	<script src="scripts/services/branchCodeService.js"
+		type="application/javascript"></script>
+
+	<script src="scripts/controllers/user/mainController.js"
+		type="application/javascript"></script>
+	<script src="scripts/controllers/user/editController.js"
+		type="application/javascript"></script>
+	<script src="scripts/controllers/user/createController.js"
+		type="application/javascript"></script>
+	<script src="scripts/services/userService.js"
+		type="application/javascript"></script>
+
+	<script src="scripts/controllers/role/createRole.js"
+		type="application/javascript"></script>
+	<script src="scripts/controllers/role/editRole.js"
+		type="application/javascript"></script>
+	<script src="scripts/controllers/role/RoleController.js"
+		type="application/javascript"></script>
+	<script src="scripts/services/roleService.js"
+		type="application/javascript"></script>
+	<script>
+		jQuery(document).ready(function() {
+			Metronic.init(); // init metronic core componets
+			Layout.init(); // init layout
+
+			//	 EcommerceIndex.init();
+		});
+	</script>
+</body>
+</html>

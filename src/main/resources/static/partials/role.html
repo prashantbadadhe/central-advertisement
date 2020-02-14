@@ -1,0 +1,44 @@
+<div ng-controller="RoleController as ctrl">
+<page-breadcrumb></page-breadcrumb>
+	<alert-success></alert-success>
+	<alert-fail></alert-fail>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="portlet box blue">
+ 				<div class="portlet-title">
+					<div class="caption">
+						<i class="fa fa-edit"></i>{{pageName}}
+					</div>
+					<div class="tools">
+						<a href="javascript:;" class="collapse"> <i class="icon-collapse"></i></a> <a ng-click="ctrl.getRole()" class="reload"> </a>
+					</div>
+				</div>
+				<div class="portlet-body">
+					<div class="table-toolbar remove-bottom-margin">
+						<div class="row">
+							<div class="col-md-9">
+								<div class="btn-group">
+									<button type="button" class="btn-grid-position btn green" ng-click="ctrl.openCreateModal()">
+										Add <i class="fa fa-plus"></i>
+									</button>
+									<button type="button" class="btn-grid-position btn red" ng-if="ctrl.enableDeleteButton>0" ng-click="ctrl.deleteSelected()">
+										Delete <i class="fa fa-minus"></i>
+									</button>
+									
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="inner-addon right-addon">
+									<i class="glyphicon glyphicon-search"></i> <input type="text" class="form-control search-input-field" ng-change="ctrl.refreshData()" placeholder="Search Role details"
+										ng-model="ctrl.searchText">
+								</div>
+							</div>
+						</div>
+					</div>
+					<main-grid></main-grid>
+					<bottom-alert></bottom-alert>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

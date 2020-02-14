@@ -1,0 +1,125 @@
+<div class="modal-content container-margin">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" ng-click="onCancel()" aria-hidden="true"></button>
+		<h4 ng-show="editMode" class="modal-title">Update Branch</h4>
+		<h4 ng-show="createMode" class="modal-title">Create Branch</h4>
+	</div>
+	<form class="form-horizontal" role="form" name="radixileForm" ng-submit="save()">
+		<div class="modal-body">
+			<div class="form-group row">
+				<label for="companyId" class="col-md-2 control-label">Company<span class="required">*</span>
+				</label>
+				<div class="col-md-8">
+					<!-- 	 ng-change="onCategoryChange(itemSelected)"  -->
+					<select class="form-control " id="companyId" name="companyName" ng-model="newCompany">
+ 								<option  ng-selected ="{{company.id == companyName}}"  ng-repeat="company in companyList" value={{company.id}}>{{company.name}}</option>
+					</select>
+					<!-- 			<div class="has-error" ng-show="radixileForm.$dirty">
+						<span ng-show="radixileForm.companyName.$error.required">This is a required field</span>
+					</div> -->
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="countryNameList" class="col-md-2 control-label">Branch<span class="required">*</span>
+				</label>
+				<div class=" controls col-md-8">
+					<input placeholder="Branch Name" name="branchName" id="branchNam" type="text" class="inputfield col-md-12" ng-model="branch.name" required>
+					<div class="has-error" ng-show="radixileForm.$dirty">
+						<span ng-show="radixileForm.branchName.$error.required">This is a required field</span>
+					</div>
+				</div>
+			</div>
+			<div class="row ">
+				<div class="col-md-6">
+					<h4>
+						Mobile<span class="required">*</span>
+					</h4>
+				</div>
+			</div>
+			<div class="group-section">
+				<div class=" form-group row ">
+					<div class=" controls col-md-6">
+						<p>
+							<input name=primarymobile type="text" class="inputfield col-md-12" placeholder="mobile number" ng-model="branch.phone1" required maxlength="10">
+						</p>
+						<div class="has-error" ng-show="radixileForm.$dirty">
+							<span ng-show="radixileForm.primarymobile.$error.required">This is a required field</span>
+						</div>
+					</div>
+			 
+				</div>
+			</div>
+			<div class=" control-group row ">
+				<div class=" controls col-md-6">
+					<h4>
+						Email<span class="required">*</span>
+					</h4>
+				</div>
+			</div>
+			<div class="group-section">
+				<div class=" control-group row ">
+					<div class=" controls col-md-6">
+						<p>
+							<input name="primarymail" type="email" class="inputfield col-md-12" placeholder="mail id" ng-model="branch.email1" required>
+						</p>
+						<div class="has-error" ng-show="radixileForm.$dirty">
+							<span ng-show="radixileForm.primarymail.$error.required">This is a required field</span>
+						</div>
+					</div>
+		 
+				</div>
+			</div>
+			<div class="row ">
+				<div class=" controls col-md-6">
+					<h4>Address</h4>
+				</div>
+			</div>
+			<div class="group-section address-inputbox">
+				<div class=" control-group row ">
+					<div class=" controls col-md-6">
+						<p>
+							<input type="text" class="inputfield col-md-12" placeholder="Building Name / Number" ng-model="branch.addressLine1">
+						</p>
+					</div>
+					<div class=" controls col-md-6">
+						<p>
+							<input type="text" class="inputfield col-md-12" placeholder="Street Name" ng-model="branch.addressLine2">
+						</p>
+					</div>
+				</div>
+				<div class=" control-group row ">
+					<div class=" controls col-md-6">
+						<p>
+							<input type="text" class="inputfield col-md-12" placeholder="City" ng-model="branch.city">
+						</p>
+					</div>
+					<div class=" controls col-md-6">
+						<p>
+							<input type="text" class="inputfield col-md-12" placeholder="State" ng-model="branch.state">
+						</p>
+					</div>
+				</div>
+				<div class=" control-group row ">
+					<div class=" controls col-md-6">
+						<p>
+							<input type="text" class="inputfield col-md-12" placeholder="Country Name" ng-model="branch.country">
+						</p>
+					</div>
+					<div class=" controls col-md-6">
+						<p>
+							<input type="text" class="inputfield col-md-12" placeholder="zipcode" ng-model="branch.zipcode">
+						</p>
+					</div>
+				</div>
+		 
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button id="btnAdd" class="btn green btn-medium " type="submit" value="Add" ng-disabled="radixileForm.$invalid">
+				<i class="fa fa-check"></i> Save
+			</button>
+			<button type="button" class="btn default" ng-click="onCancel()">Close</button>
+		</div>
+		</form>
+</div>
+

@@ -1,0 +1,83 @@
+<div class="modal-content container-margin">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal"
+			ng-click="onCancel()" aria-hidden="true"></button>
+		<h4 ng-show="editMode" class="modal-title">Update User</h4>
+		<h4 ng-show="createMode" class="modal-title">Create User</h4>
+	</div>
+	<form class="form-horizontal" role="form" name="radixileForm"
+		ng-submit="save()">
+		<div class="modal-body">
+			<div class="form-group row">
+				<div class="col-md-3">
+					<label> Role<span class="required">*</span>
+					</label>
+				</div>
+				<div class="col-md-8">
+						<select class="form-control " id="roleId" name="roleName"
+						ng-model="newRole">
+						<option ng-selected="{{role.id == roleName}}"
+							ng-repeat="role in roleList" value={{role.id}}>{{role.name}}</option>
+					</select>
+								<div class="has-error" ng-show="radixileForm.$dirty">
+						<span ng-show="radixileForm.roleName.$error.required">This is a required field</span>
+					</div>
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-md-3">
+					<label> Username<span class="required">*</span>
+					</label>
+				</div>
+				<div class=" controls col-md-8">
+					<input placeholder="User Name" name="userName" id="userName"
+						type="text" class="inputfield col-md-12" ng-model="user.username"
+						required>
+					<div class="has-error" ng-show="radixileForm.$dirty">
+						<span ng-show="radixileForm.userName.$error.required">This
+							is a required field</span>
+					</div>
+				</div>
+			</div>
+				<div class="form-group row">
+				<div class="col-md-3">
+					<label> Password<span class="required">*</span>
+					</label>
+				</div>
+				<div class=" controls col-md-8">
+					<input placeholder="Passwrod" name="password" id="password"
+						type="text" class="inputfield col-md-12" ng-model="user.password"
+						required>
+					<div class="has-error" ng-show="radixileForm.$dirty">
+						<span ng-show="radixileForm.userName.$error.required">This
+							is a required field</span>
+					</div>
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-md-3">
+					<label> Email<span class="required">*</span>
+					</label>
+				</div>
+				<div class=" controls col-md-8">
+					<input placeholder="Enter your email" name="email" id="firstName"
+						type="text" class="inputfield col-md-12" ng-model="user.email"
+						required>
+					<div class="has-error" ng-show="radixileForm.$dirty">
+						<span ng-show="radixileForm.email.$error.required">This is
+							a required field</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<div class="modal-footer">
+		<button id="btnAdd" class="btn green btn-medium " type="submit"
+			value="Add" ng-disabled="radixileForm.$invalid">
+			<i class="fa fa-check"></i> Save
+		</button>
+		<button type="button" class="btn default" ng-click="onCancel()">Close</button>
+	</div>
+	</form>
+</div>
+

@@ -1,0 +1,132 @@
+<!-- <div class="modal-content container-margin">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" ng-click="onCancel()" aria-hidden="true"></button>
+		<h4 ng-show="editMode" class="modal-title">Update Company</h4>
+		<h4 ng-show="createMode" class="modal-title">Create Company</h4>
+	</div>
+	<div class="modal-body">
+		<form class="form-horizontal" role="form">
+			<div class=" control-group row ">
+				<div class="alert alert-danger text-center" data-ng-show="mandatoryFieldReq">
+					<strong>Mandatory field required </strong>
+				</div>
+				<div class=" controls col-md-8">
+
+					<div ng-class="{'mandatory':mandatoryFieldReq}">
+						<input ng-click="changeMandatoryField()" placeholder="Company Name" id="companyName" type="text" class="inputfield col-md-12" ng-model="company.name" required>
+					</div>
+				</div>
+			</div>
+
+			<div class="row ">
+				<div class="col-md-6">
+					<h4>
+						Phone<span class="required">**</span>
+					</h4>
+				</div>
+			</div>
+			<div class="group-section">
+				<div class=" form-group row ">
+					<div class=" controls col-md-6">
+						<p>
+							<input name=phone1 type="text" class="inputfield col-md-12" placeholder="Primary mobile number" ng-model="company.phone1" required>
+						</p>
+						<div class="has-error" ng-show="radixileForm.$dirty">
+							<span ng-show="radixileForm.phone1.$error.required">This is a required field</span>
+						</div>
+					</div>
+					<div class=" controls col-md-6">
+						<p>
+							<input type="text" class="inputfield col-md-12" placeholder="Secondary mobile number" ng-model="company.phone2">
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class=" control-group row ">
+				<div class=" controls col-md-6">
+					<h4>
+						Email<span class="required">**</span>
+					</h4>
+				</div>
+			</div>
+			<div class="group-section">
+				<div class=" control-group row ">
+					<div class=" controls col-md-6">
+						<p>
+							<input name="email1" type="text" class="inputfield col-md-12" placeholder="Primary mail id" ng-model="company.email1" required>
+						</p>
+						<div class="has-error" ng-show="radixileForm.$dirty">
+							<span ng-show="radixileForm.email1.$error.required">This is a required field</span>
+						</div>
+					</div>
+					<div class=" controls col-md-6">
+						<p>
+							<input type="text" class="inputfield col-md-12" placeholder="Secondary mail id" ng-model="company.email2">
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="row ">
+				<div class=" controls col-md-6">
+					<h4>Address</h4>
+				</div>
+			</div>
+			<div class="group-section address-inputbox">
+				<div class=" control-group row ">
+					<div class=" controls col-md-6">
+						<p>
+							<input type="text" class="inputfield col-md-12" placeholder="Building Name / Number" ng-model="company.addressLine1">
+						</p>
+					</div>
+					<div class=" controls col-md-6">
+						<p>
+							<input type="text" class="inputfield col-md-12" placeholder="Street Name" ng-model="company.addressLine2">
+						</p>
+					</div>
+				</div>
+				<div class=" control-group row ">
+					<div class=" controls col-md-6">
+						<p>
+							<input type="text" class="inputfield col-md-12" placeholder="City" ng-model="company.city">
+						</p>
+					</div>
+					<div class=" controls col-md-6">
+						<p>
+							<input type="text" class="inputfield col-md-12" placeholder="State" ng-model="company.state">
+						</p>
+					</div>
+				</div>
+				<div class=" control-group row ">
+					<div class=" controls col-md-6">
+						<p>
+							<input type="text" class="inputfield col-md-12" placeholder="Country Name" ng-model="company.country">
+						</p>
+					</div>
+					<div class=" controls col-md-6">
+						<p>
+							<input type="text" class="inputfield col-md-12" placeholder="zipcode" ng-model="company.zipcode">
+						</p>
+					</div>
+				</div>
+				<div class=" control-group row ">
+					<div class=" controls col-md-6">
+						<p>
+							<input type="text" class="inputfield col-md-12 " placeholder="lattitude" ng-model="company.lattitude">
+						</p>
+					</div>
+					<div class=" controls col-md-6">
+						<p>
+							<input type="text" class="inputfield col-md-12 " placeholder="longitude" ng-model="company.longitude">
+						</p>
+					</div>
+				</div>
+			</div>
+
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn green" ng-click="save()">Save</button>
+		<button type="button" class="btn default" ng-click="onCancel()">Close</button>
+	</div>
+</div>
+ -->

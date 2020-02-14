@@ -1,0 +1,159 @@
+<h2>Upload All Advertisement Images</h2>
+<div ng-controller="UploadFileController">
+	<page-breadcrumb></page-breadcrumb>
+	<alert-success></alert-success>
+	<alert-fail></alert-fail>
+	<form class="form-horizontal" role="form" name="radixileForm" ng-submit="upload()">
+		<div class="form-group row">
+			<label class="col-md-2 control-label"> </label>
+			<div class="col-md-10">
+				<strong>
+					<i>
+						<ins>Select BRANCH to see uploaded images below.</ins>
+					</i>
+				</strong>
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="branchId" class="col-md-2 control-label">Branch
+				<span class="required">*</span>
+			</label>
+			<div class="col-md-4">
+				<!-- 	<select class="form-control " id="branchId" name="branchName" ng-model="branch" ng-change="getAllFiles()">
+					<option ng-selected="{{branch.id == branchName}}" ng-repeat="branch in branchList" value={{branch.id}}>{{branch.name}}</option>
+				</select> -->
+				<select class="form-control " id="branchId" name="branchName" ng-model="branch" ng-options="branch.id as branch.name for branch in branchList"
+				 onload="getAllFiles()" ng-change="getAllFiles()">
+				</select>
+				<div class="has-error" ng-show="radixileForm.$dirty">
+					<span ng-show="radixileForm.branch.$error.required">This is a required field</span>
+				</div>
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="startdate" class="col-md-2 control-label">Start Date
+				<span class="required">*</span>
+			</label>
+			<div class=" controls col-md-4">
+				<datepicker date-format="dd-MM-yyyy" selector="form-control">
+					<div class="input-group">
+						<input name=startDate type="text" class="form-control inputfield col-md-4" placeholder="Start Date" ng-model="startDate"
+						 required>
+						<span class="input-group-addon" style="cursor: pointer">
+							<i class="fa fa-lg fa-calendar"></i>
+						</span>
+					</div>
+				</datepicker>
+				<div class="has-error" ng-show="radixileForm.$dirty">
+					<span ng-show="radixileForm.startdate.$error.required">This is a required field</span>
+				</div>
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="enddate" class="col-md-2 control-label">End Date
+				<span class="required">*</span>
+			</label>
+			<div class=" controls col-md-4">
+				<datepicker date-format="dd-MM-yyyy" selector="form-control">
+					<div class="input-group">
+						<input name=endDate type="text" class=" form-control inputfield col-md-4" placeholder="End Date" ng-model="endDate" required
+						/>
+						<span class="input-group-addon" style="cursor: pointer">
+							<i class="fa fa-lg fa-calendar"></i>
+						</span>
+					</div>
+				</datepicker>
+				<div class="has-error" ng-show="radixileForm.$dirty">
+					<span ng-show="radixileForm.enddate.$error.required">This is a required field</span>
+				</div>
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="description" class="col-md-2 control-label">Description </label>
+			<div class=" controls col-md-4">
+				<input placeholder="Description" name="description" id="description" type="text" class="inputfield col-md-12" ng-model="description">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="branchId" class="col-md-2 control-label">Duration in Seccond
+				<span class="required">*</span>
+			</label>
+			<div class="col-md-4">
+				<select class="form-control " id="durationid" name="duration" ng-model="duration" ng-options="duration.value as duration.value for duration in durationValues">
+				</select>
+				<div class="has-error" ng-show="radixileForm.$dirty">
+					<span ng-show="radixileForm.branch.$error.required">This is a required field</span>
+				</div>
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="filesupload" class="col-md-2 control-label">Select Files </label>
+			<div class=" controls col-md-4">
+				<input class="fileupload" placeholder="Select Multiple files" type="file" file-model="files" class="inputfield col-md-12"
+				 multiple />
+				<!-- <input placeholder="Select Multiple files" type="file"
+					file-model="files" class="inputfield col-md-12" multiple /> -->
+				<div class="has-error" ng-show="radixileForm.$dirty">
+					<!-- 						<span ng-show="radixileForm.fileupload.$error.required">This is a required field</span>
+ -->
+				</div>
+			</div>
+		</div>
+		<div class="form-group row">
+			<label class="col-md-2 control-label"> </label>
+			<button id="btnAdd" class="col-md-1 btn green btn-medium " type="submit" value="Upload" ng-disabled="radixileForm.$invalid">
+				<i class="fa fa-check"></i> Upload
+			</button>
+		</div>
+	</form>
+	<hr>
+	<div ng-if="showGrid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="portlet box blue">
+					<div class="portlet-title">
+						<div class="caption">
+							<i class="fa fa-edit"></i>{{pageName}}
+						</div>
+					</div>
+					<div class="portlet-body">
+						<div class="table-toolbar remove-bottom-margin">
+							<div class="row">
+								<div class="col-md-1">
+									<div class="btn-group">
+										<button id="save" type="button" class="btn-grid-position btn btn-success" ng-click="saveState()">Save</button>
+									</div>
+								</div>
+								<div class="col-md-3 apply-to-all">
+									<label>
+										<input class="apply-to-all-checkbox" ng-change="updateCheckBoxValue()" type="checkbox" ng-model="applyToAll">Apply Changes To All Branches</label>
+
+								</div>
+							</div>
+							<div ui-grid="gridOptions" ui-grid-auto-resize ui-grid-pagination ui-grid-resize-columns ui-grid-move-columns ui-grid-exporter
+							 ui-grid-edit ui-grid-row-edit ui-grid-save-state ui-grid-cellNav class="grid"></div>
+							<div class="table-toolbar remove-bottom-margin">
+								<div class="row">
+
+									<div class="col-md-1">
+										<div class="btn-group">
+											<button id="save" type="button" class="btn-grid-position btn btn-success" ng-click="saveState()">Save</button>
+											<div class="checkbox">
+
+											</div>
+										</div>
+
+
+									</div>
+									<div class="col-md-3 apply-to-all">
+										<label>
+											<input class="apply-to-all-checkbox" ng-change="updateCheckBoxValue()" type="checkbox" ng-model="applyToAll">Apply Changes To All Branches</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

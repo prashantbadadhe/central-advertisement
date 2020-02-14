@@ -1,0 +1,81 @@
+#filter{
+	width:200px;
+}
+#filterLabel{
+	margin-top: 8px !important;
+}
+
+  
+.countryName.ng-valid {
+	color: lightgreen;
+}
+
+.countryName.ng-dirty.ng-invalid-required {
+	color: red;
+}
+
+.code.ng-dirty.ng-invalid-minlength {
+	color: yellow;
+}
+ 
+ .code.ng-valid {
+	background-color: lightgreen;
+}
+.dropdown-menu {
+    max-height: 200px;
+    width: 60px;
+    overflow: auto;
+}
+.search-control {
+    padding: 5px 10px;
+}
+.code.ng-dirty.ng-invalid-required {
+	background-color: red;
+}
+
+.code.ng-dirty.ng-invalid-minlength {
+	background-color: yellow;
+}
+.inputArray{
+	margin-top: 20px;
+}
+.phoneInput {
+	padding-top: 20px;
+}
+.emailInput {
+	padding-top: 20px;
+}
+.input-group-addon.primary {
+    color: rgb(255, 255, 255);
+    background-color: rgb(50, 118, 177);
+    border-color: rgb(40, 94, 142);
+}
+.input-group-addon.success {
+    color: rgb(255, 255, 255);
+    background-color: rgb(92, 184, 92);
+    border-color: rgb(76, 174, 76);
+}
+/* .input-group-addon.info {
+    color: rgb(255, 255, 255);
+    background-color: rgb(57, 179, 215);
+    border-color: rgb(38, 154, 188);
+} */
+.input-group-addon.warning {
+    color: rgb(255, 255, 255);
+    background-color: rgb(240, 173, 78);
+    border-color: rgb(238, 162, 54);
+}
+.input-group-addon.danger {
+    color: rgb(255, 255, 255);
+    background-color: rgb(217, 83, 79);
+    border-color: rgb(212, 63, 58);
+}
+.buttonType{
+	margin-top: 12px;
+}
+.locationbuttonSize{
+	width:116px;
+}
+.fixingcolumnwith{
+	width:114px;
+}

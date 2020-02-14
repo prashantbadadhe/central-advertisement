@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+<meta charset="UTF-8">
+<title>Login Form</title>
+<link rel="icon" type="image/gif/png" href="img/images.png" />
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/loginstyle.css">
+<link href="scripts/node_modules/angular-ui-grid/ui-grid.min.css" rel="stylesheet" />
+</head>
+
+<body ng-controller="LoginController">
+
+	<div class="modal-body row">
+
+		<div class="col-md-7 header-position ">
+			<div class="row" style="border-right: solid;">
+				<div class="col-md-12">
+					<h1 class="company-header">
+						<b>Parees Infotech Pvt Ltd</b>
+					</h1>
+<!-- 					<h5 class="tagline-position">Digital Display System</h5> -->
+					<div class="features">
+
+<!-- 						<p class="text-muted"> -->
+<!-- 							<span class="glyphicon glyphicon-ok"></span> &nbsp Content -->
+<!-- 							Management -->
+<!-- 						</p> -->
+<!-- 						<p class="text-primary"> -->
+<!-- 							<span class="glyphicon glyphicon-ok"></span> &nbsp Customer -->
+<!-- 							Management -->
+<!-- 						</p> -->
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="col-md-5">
+			<div class="login" id="form-loginpage">
+				<h2 style="padding-bottom: 25px">Login Here!!</h2>
+
+				<div class="row">
+
+					<form role="form" ng-submit="login()">
+
+						<fieldset class="col-md-11 login-page-inputes">
+							<div class="form-group input-group">
+								<span class="input-group-addon"> <i
+									class="glyphicon glyphicon-user"> </i></span> <input type="text"
+									name="u" placeholder="Username" ng-model="credentials.username"
+									required="required" />
+							</div>
+							<div class="form-group input-group">
+								<span class="input-group-addon"> <i
+									class="glyphicon glyphicon-lock"> </i>
+								</span> <input type="password" name="p" placeholder="Password"
+									ng-model="credentials.password" required="required" />
+							</div>
+							<div class="form-group">
+								<button type="submit"
+									class="btn btn-primary btn-block btn-large">Sign In</button>
+								<p class="help-block">
+									<a class="pull-right text-muted" href="#" id="forgot-password">
+										Forgot your password? </a> <a class="pull-right text-muted"
+										ng-href="register" id="register"> Not a user? </a>
+								</p>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+			<div style="display: none;" id="form-forgot" class="col-md-12">
+				<font color="white">
+					<h1>Forgot your password?</h1>
+				</font>
+				<form role="form" id="login-forgot-password"
+					ng-submit="forgotPassword()">
+					<fieldset>
+						<span class="help-block"> Email address you have register
+							with Parees Infotech <br> We'll send you an email
+							with instructions to choose a new password.
+						</span>
+						<div class="form-group input-group">
+							<span class="input-group-addon"> @ </span> <input
+								class="form-control" placeholder="Email" name="email"
+								type="email" required="">
+						</div>
+						<button type="submit" class="btn btn-primary btn-block"
+							id="btn-olvidado">Continue</button>
+						<p class="help-block access-to-login">
+							<a class="text-muted" href="#" id="back-to-login">Account
+								Access </a>
+						</p>
+					</fieldset>
+				</form>
+			</div>
+
+
+			<div style="display: none;" class="col-md-12" id="form-register">
+				<h1 class="">New User Registration?</h1>
+				<h2>
+					<span class="help-block"><small>You do not have
+							privilege to create new user. Please contact </small><strong> <br>Parees
+							Team on +91 9623788788
+					</strong> </span>
+				</h2>
+				<p class="help-block access-to-login">
+					<a class="text-muted" href="#" id="login-from-register">
+						Account Access </a>
+				</p>
+			</div>
+		</div>
+	</div>
+	 <script src="scripts/build/angular-packages.min.js" type="application/javascript"></script>
+	<!-- <script src="scripts/bower_components/angular/angular.js" type="text/javascript"></script>
+	<script src="scripts/bower_components/angular-route/angular-route.js" type="text/javascript"></script>
+	<script src="scripts/node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
+	<script src="scripts/node_modules/angular-ui-grid/ui-grid.min.js" type="text/javascript"></script>
+	<script src="scripts/bower_components/angular-route/angular-route.js" type="text/javascript"></script>
+	<script src="scripts/bower_components/angular-sanitize/angular-sanitize.js" type="text/javascript"></script>
+	<script src="scripts/bower_components/pdfmake/build/pdfmake.min.js" type="text/javascript"></script>
+	<script src="scripts/bower_components/pdfmake/build/vfs_fonts.js" type="text/javascript"></script>
+	<script src="scripts/bower_components/pdfmake/build/csv.js" type="text/javascript"></script>
+	<script src="scripts/bower_components/angular-spring-data-rest/dist/angular-spring-data-rest.js" type="text/javascript"></script>
+	<script src="scripts/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js" type="text/javascript"></script>
+	<script src="scripts/bower_components/angular-dragdrop/src/angular-dragdrop.min.js" type="text/javascript"></script>
+	<script src="scripts/bower_components/angularjs-datepicker/dist/angular-datepicker.js" type="text/javascript"></script>
+	<script src="scripts/bower_components/angular-file-upload/dist/angular-file-upload.min.js" type="text/javascript"></script> -->
+	<script src="scripts/app.js" type="text/javascript"></script>
+	<script src="scripts/routes.js" type="application/javascript"></script>
+	<script src="scripts/controllers/loginController.js"
+		type="application/javascript"></script>
+	<script src="scripts/services/loginService.js"
+		type="application/javascript"></script>
+	<script src="scripts/util/loginindex.js" type="application/javascript"></script>
+</body>
+</html>

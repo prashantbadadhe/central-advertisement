@@ -1,0 +1,10 @@
+{
+    "filesToWatch": "G:/projects/bankadvertisement/G:/projects/bankadvertisement/target/BankAdvertisementApp-0.0.1-SNAPSHOT///**",
+    "directoryToWatch": "G:/projects/bankadvertisement/G:/projects/bankadvertisement/target/BankAdvertisementApp-0.0.1-SNAPSHOT//",
+    "projectRootPath": "G:/projects/bankadvertisement",
+    "targetPath": "G:/projects/bankadvertisement/target",
+    "sourceDirectory": "G:/projects/bankadvertisement/target/BankAdvertisementApp-0.0.1-SNAPSHOT",
+    "jsSourceDirectory": "/",
+    "warTargetDirectory": "/",
+    "filteredFiles": ["**/node_modules.tar"]
+}

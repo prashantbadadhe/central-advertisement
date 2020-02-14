@@ -1,0 +1,46 @@
+spring:
+    application:
+        name: bankadv 
+#    datasource:
+#        url: jdbc:postgresql://localhost:5433/bankadv
+#        username: postgres
+#        password: root
+#        driverClassName: org.postgresql.Driver
+#    jpa:
+#        database-platform: org.hibernate.dialect.PostgreSQLDialect
+#        show-sql: true
+#        hibernate:
+#          ddl-auto: update
+ 
+  # enable H2 web console and set url for web console
+  # http://localhost:8080/console
+ 
+    datasource:
+        driverClassName: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/bankadv?useSSL=true
+        username: root
+        password: root
+    jpa:
+      database-platform: org.hibernate.dialect.MySQLDialect
+      show-sql: true
+      hibernate.ddl-auto: update
+    http:
+      multipart:
+        max-file-size: 1000MB
+        max-request-size: 1000MB
+server:
+    port: 8080
+ 
+
+#logging:
+#  level:
+#    ROOT: DEBUG
+logging:
+  file: logs/application-debug.log
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    org.springframework.web: ERROR
+    org.hibernate: ERROR
+   
